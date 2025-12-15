@@ -9,7 +9,7 @@ const PORT = 5000;
 app.use(bodyParser.json());
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://aasagbo:JzaVNLotgEFNq8VZ@librarydb.mq8hcy8.mongodb.net/?retryWrites=true&w=majority&appName=libraryDB', {
+mongoose.connect('mongodb+srv://mongoSecretUrl/?retryWrites=true&w=majority&appName=libraryDB', {
     appName: 'libraryDB'
 })
     .then(() => console.log('Connected to MongoDB Atlas!'))
@@ -25,4 +25,5 @@ app.use('/api/members', memberRoutes);
 app.use('/api/staffs', staffRoutes);
 
 // Start Server
+
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
