@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Date;
 
 public class MongoDBUtil {
-    private static final String CONNECTION_STRING = "mongodb+srv://aasagbo:JzaVNLotgEFNq8VZ@librarydb.mq8hcy8.mongodb.net/?retryWrites=true&w=majority&appName=libraryDB";
+    private static final String CONNECTION_STRING = "mongodb+srv:/MongoSecretUrl/?retryWrites=true&w=majority&appName=libraryDB";
     private static final String DATABASE_NAME = "libraryDB";
 
     private static final MongoClient mongoClient = MongoClients.create(CONNECTION_STRING);
@@ -205,4 +205,5 @@ public class MongoDBUtil {
         DeleteResult result = memberCollection.deleteOne(Filters.eq("memberId", memberId));
         System.out.println("Deleted Member Count: " + result.getDeletedCount());
     }
+
 }
